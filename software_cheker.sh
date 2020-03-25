@@ -4,6 +4,11 @@
 #ターミナルの横幅
 WIDTH=$(tput cols)
 
+#nvmコマンドを実行可能にする
+NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 #各バージョンチェックのフラグ
 os_flag=false
 xcode_flag=false
@@ -90,7 +95,7 @@ js_checker(){
   separater
 
   echo '＜管理中のNode.js＞'
-    nvm ls-remote | grep 'Latest LTS'
+    nvm ls
   separater
 }
 
