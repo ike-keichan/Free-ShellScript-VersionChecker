@@ -9,4 +9,3 @@
 ## program
 ### software_cheker.sh 
 自分の使用しているMacBook内のソフトウェアのバージョン管理をするために作成。
-# MyAppleScriptProgram
