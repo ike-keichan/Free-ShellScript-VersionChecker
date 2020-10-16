@@ -1,12 +1,21 @@
 # MyShellScriptProgram
 
-## status
+## Status
 作成期間：2020.3~　
 
-## about
+## About
 自分の作業を楽にしたい。
 
-## program
+## Version
+以下の環境での実行を想定しています。
+```
+$ sw_vers
+ProductName:	Mac OS X
+ProductVersion:	10.15.7
+BuildVersion:	19H2
+```
+
+## Program
 ### aok_software_cheker.sh 
 京都産業大学 情報理工学部 青木淳教授の開講する授業で必要なソフトウェアのバージョンを管理するプログラムです。
 このプログラムの実行によって必要なソフトウェアのバージョンを列挙することができます。
