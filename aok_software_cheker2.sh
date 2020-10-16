@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # ver1.0 ： 2020/10/17
+# ver1.1 ： 2020/10/17
 # 現バージョンはいくつか問題があります。そもそも、確認するソフトウェアがインストールされていない場合、ShellScriptがエラーを出します。
 # また、それぞれのコマンドのパスが通っていない場合などもShellScriptがエラーを出すでしょう。
 # そのほかにはgccのバージョンチェックの際に「Configured with:~~~」と表示され、見栄えが悪くなります。
@@ -55,8 +56,8 @@ python_flag=false
 js_flag=false
 ruby_flag=false
 scm_flag=false
-help_flag=false;
-separeter_flag=true;
+help_flag=true;
+separeter_flag=false;
 
 #　それぞれの確認結果を表示する関数
 print_result()
@@ -260,27 +261,28 @@ do
       case "${OPTARG}" in
         all)
             mac_flag=true; c_flag=true; java_flag=true; python_flag=true;
-            js_flag=true; ruby_flag=true; scm_flag=true;;
+            js_flag=true; ruby_flag=true; scm_flag=true; separeter_flag=true; help_flag=false;;
         macos)
-            mac_flag=true;;
+            mac_flag=true; separeter_flag=true; help_flag=false;;
         c)
-            c_flag=true;;
+            c_flag=true; separeter_flag=true; help_flag=false;;
         ja)
-            java_flag=true;;
+            java_flag=true; separeter_flag=true; help_flag=false;;
         js)
-            js_flag=true;;
+            js_flag=true; separeter_flag=true; help_flag=false;;
         py)
-            python_flag=true;;
+            python_flag=true; separeter_flag=true; help_flag=false;;
         rb)
-            ruby_flag=true;;
+            ruby_flag=true; separeter_flag=true; help_flag=false;;
         scm)
-            scm_flag=true;;
+            scm_flag=true; separeter_flag=true; help_flag=false;;
         help)
-            help_flag=true; separeter_flag=false;;
+            help_flag=true;;
+        ?)
+            help_flag=true;;
       esac ;;
     ?)
-        mac_flag=true; c_flag=true; java_flag=true; python_flag=true;
-        js_flag=true; ruby_flag=true; scm_flag=true;;
+        help_flag=true;;
   esac
 done
 

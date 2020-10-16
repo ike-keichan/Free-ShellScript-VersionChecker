@@ -3,6 +3,7 @@
 
 # ver1.0 ： 2020/03/21
 # ver2.0 : 2020/10/17
+# ver2.1 : 2020/10/17
 # このプログラムは京都産業大学 情報理工学部 青木淳教授の開講する授業で必要なソフトウェアのバージョンを管理するプログラムです。
 # このプログラムの実行によって必要なソフトウェアのバージョンを列挙することができます。
 
@@ -22,7 +23,7 @@ python_flag=false
 js_flag=false
 ruby_flag=false
 scm_flag=false
-help_flag=false;
+help_flag=true;
 separeter_flag=true;
 
 #描写時の仕切り
@@ -169,30 +170,33 @@ do
       case "${OPTARG}" in
         all)
             mac_flag=true; c_flag=true; java_flag=true; python_flag=true;
-            js_flag=true; ruby_flag=true; scm_flag=true;;
+            js_flag=true; ruby_flag=true; scm_flag=true; help_flag=false;;
         macos)
-            mac_flag=true;;
+            mac_flag=true; help_flag=false;;
         c)
-            c_flag=true;;
+            c_flag=true; help_flag=false;;
         ja)
-            java_flag=true;;
+            java_flag=true; help_flag=false;;
         js)
-            js_flag=true;;
+            js_flag=true; help_flag=false;;
         py)
-            python_flag=true;;
+            python_flag=true; help_flag=false;;
         rb)
-            ruby_flag=true;;
+            ruby_flag=true; help_flag=false;;
         scm)
-            scm_flag=true;;
+            scm_flag=true; help_flag=false;;
         help)
             help_flag=true;;
+        ?)
+            help_flag=true;
       esac ;;
     ?)
-        help_flag-true;
+        help_flag=true;
   esac
 done
 
 #各バージョンチェックのフラグ
+if [ ! ${mac_flag} ] ; then separater ;fi
 if "${mac_flag}" ; then os_checker ;fi
 if "${c_flag}" ; then c_checker ;fi
 if "${java_flag}" ; then java_checker ; fi
